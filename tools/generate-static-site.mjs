@@ -459,7 +459,7 @@ function renderSelectedCompanyPage(page) {
           </article>
           <article class="mini-card selected-panel">
             <h3>Regional offices</h3>
-            <p><strong>Helsinki Headquarters</strong><br>Keilaranta 16<br>02150 Espoo, Finland<br><span class="linkish">+358 20 123 4567</span></p>
+            <p><strong>Helsinki Headquarters</strong><br>Muonamiehentie 11<br>00390 Helsinki, Finland<br><span class="linkish">+358 40 580 4819</span></p>
           </article>
         </div>
         <div class="form-panel">

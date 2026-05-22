@@ -104,9 +104,9 @@ test('strategic partnership pages list only the Helsinki headquarters office', a
     const html = await readSiteFile(route);
 
     assert.match(html, /Helsinki Headquarters/);
-    assert.match(html, /Keilaranta 16/);
-    assert.match(html, /02150 Espoo, Finland/);
-    assert.match(html, /\+358 20 123 4567/);
+    assert.match(html, /Muonamiehentie 11/);
+    assert.match(html, /00390 Helsinki, Finland/);
+    assert.match(html, /\+358 40 580 4819/);
     assert.doesNotMatch(html, /Stockholm Office/);
     assert.doesNotMatch(html, /Sveavägen 9/);
     assert.doesNotMatch(html, /111 57 Stockholm, Sweden/);
