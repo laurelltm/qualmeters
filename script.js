@@ -1,5 +1,6 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
+const siteHeader = document.querySelector('.site-header');
 const desktopBreakpoint = window.matchMedia('(min-width: 1181px)');
 
 const normalizePath = (value) => {
@@ -30,8 +31,16 @@ const closeDropdowns = (except) => {
   });
 };
 
+const updateMobileNavTop = () => {
+  if (!siteHeader) return;
+  document.documentElement.style.setProperty('--mobile-nav-top', `${siteHeader.offsetHeight}px`);
+};
+
 if (menuToggle && mobileNav) {
+  updateMobileNavTop();
+
   menuToggle.addEventListener('click', () => {
+    updateMobileNavTop();
     const isOpen = mobileNav.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     closeDropdowns();
@@ -111,8 +120,10 @@ const handleDesktopBreakpoint = (event) => {
 
 if (desktopBreakpoint.addEventListener) {
   desktopBreakpoint.addEventListener('change', handleDesktopBreakpoint);
+  window.addEventListener('resize', updateMobileNavTop);
 } else {
   desktopBreakpoint.addListener(handleDesktopBreakpoint);
+  window.addEventListener('resize', updateMobileNavTop);
 }
 
 const currentPath = normalizePath(window.location.pathname);

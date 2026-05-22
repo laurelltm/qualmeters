@@ -85,6 +85,18 @@ test('static pages reference local assets, shared CSS and shared JavaScript', as
   }
 });
 
+test('mobile navigation opens as a viewport overlay below the sticky header', async () => {
+  const css = await readSiteFile('styles.css');
+  const mobileNavBlock = css.match(/\.mobile-nav\s*{(?<body>[^}]*)}/s)?.groups?.body ?? '';
+
+  assert.match(mobileNavBlock, /position:\s*fixed;/);
+  assert.match(mobileNavBlock, /top:\s*var\(--mobile-nav-top\);/);
+  assert.match(mobileNavBlock, /left:\s*0;/);
+  assert.match(mobileNavBlock, /right:\s*0;/);
+  assert.match(mobileNavBlock, /max-height:\s*calc\(100dvh - var\(--mobile-nav-top\)\);/);
+  assert.match(mobileNavBlock, /overflow-y:\s*auto;/);
+});
+
 test('company/contact page preserves the selected strategic partnership inquiry fields', async () => {
   const html = await readSiteFile('contact/index.html');
   for (const label of [
