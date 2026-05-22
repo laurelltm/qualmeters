@@ -279,6 +279,12 @@ function relativeUrl(currentRoute, target) {
   return `${prefix}${normalized}`;
 }
 
+const assetVersion = 'mobile-nav-4754003';
+
+function versionedAssetUrl(currentRoute, target) {
+  return `${relativeUrl(currentRoute, target)}?v=${assetVersion}`;
+}
+
 function isExactRoute(activeRoute, href) {
   return normalizeRoute(activeRoute) === normalizeRoute(href);
 }
@@ -321,13 +327,13 @@ function renderShell({ title, description, route, bodyClass = 'inner-page', main
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="icon" href="${relativeUrl(route, '/assets/qualmeters-logo.svg')}" type="image/svg+xml">
-  <link rel="stylesheet" href="${relativeUrl(route, '/styles.css')}">
+  <link rel="stylesheet" href="${versionedAssetUrl(route, '/styles.css')}">
 </head>
 <body class="${bodyClass}">
   ${renderHeader(route, activeRoute)}
   <main>${main}</main>
   ${renderFooter(route)}
-  <script src="${relativeUrl(route, '/script.js')}" defer></script>
+  <script src="${versionedAssetUrl(route, '/script.js')}" defer></script>
 </body>
 </html>`;
 }
@@ -497,7 +503,7 @@ function renderPage(page) {
   <title>${escapeHtml(meta.seoTitle)}</title>
   <meta name="description" content="${escapeHtml(meta.description)}">
   <link rel="icon" href="${relativeUrl(page.route, '/assets/qualmeters-logo.svg')}" type="image/svg+xml">
-  <link rel="stylesheet" href="${relativeUrl(page.route, '/styles.css')}">
+  <link rel="stylesheet" href="${versionedAssetUrl(page.route, '/styles.css')}">
 </head>
 <body class="${bodyClass}">
   ${renderHeader(page.route, activeRoute)}
@@ -513,7 +519,7 @@ function renderPage(page) {
     ${renderSections(page, sections)}
   </main>
   ${renderFooter(page.route)}
-  <script src="${relativeUrl(page.route, '/script.js')}" defer></script>
+  <script src="${versionedAssetUrl(page.route, '/script.js')}" defer></script>
 </body>
 </html>`;
 }

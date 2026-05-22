@@ -78,8 +78,8 @@ test('static pages reference local assets, shared CSS and shared JavaScript', as
 
   for (const route of expectedRoutes) {
     const html = await readSiteFile(route);
-    assert.match(html, /href="(?:\.\.\/)*styles\.css"/, `${route} should load shared CSS`);
-    assert.match(html, /src="(?:\.\.\/)*script\.js"/, `${route} should load shared JS`);
+    assert.match(html, /href="(?:\.\.\/)*styles\.css\?v=[a-z0-9-]+"/, `${route} should load versioned shared CSS`);
+    assert.match(html, /src="(?:\.\.\/)*script\.js\?v=[a-z0-9-]+"/, `${route} should load versioned shared JS`);
     assert.doesNotMatch(html, /(?:href|src)="\//, `${route} should use project-page-safe relative URLs`);
     assert.doesNotMatch(html, /https:\/\/lh3\.googleusercontent\.com/, `${route} should not depend on Stitch image CDN`);
   }
