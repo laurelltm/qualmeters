@@ -16,6 +16,6 @@ Then open `http://127.0.0.1:8000/`.
 
 ## GitHub Pages
 
-The generated HTML uses relative links so the site works from the project Pages URL:
+The generated HTML uses relative links so the site works both from the project Pages URL and the custom domain.
 
-`https://laurelltm.github.io/qualmeters/`
+`https://qualmeters.com/`
