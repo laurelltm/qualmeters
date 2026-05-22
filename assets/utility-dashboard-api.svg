@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Utility dashboard and API</title>
+<desc id="desc">Municipal and housing company dashboard with REST API integration.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F7FCFD"/>
+    <stop offset="0.52" stop-color="#ECF8FA"/>
+    <stop offset="1" stop-color="#EAF7F0"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="72%" cy="18%" r="70%">
+    <stop offset="0" stop-color="#D8F8FF" stop-opacity="0.95"/>
+    <stop offset="0.55" stop-color="#EAFBFF" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#20C6E6"/>
+    <stop offset="1" stop-color="#16C8A8"/>
+  </linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B3851"/>
+    <stop offset="1" stop-color="#071D2B"/>
+  </linearGradient>
+  <linearGradient id="greenline" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16C8A8"/>
+    <stop offset="1" stop-color="#7ED957"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset="0.45" stop-color="#DDEAF0"/>
+    <stop offset="1" stop-color="#B7CDD8"/>
+  </linearGradient>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#062334" flood-opacity="0.18"/>
+  </filter>
+  <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#062334" flood-opacity="0.14"/>
+  </filter>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <pattern id="dotgrid" width="34" height="34" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#9ADBE8" opacity="0.38"/>
+  </pattern>
+  <style><![CDATA[
+    .font { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+    .title { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 52px; font-weight: 800; fill: #071D2B; letter-spacing:-1px; }
+    .subtitle { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 500; fill: #6D8392; }
+    .label { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #071D2B; }
+    .small { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #6D8392; }
+    .micro { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #6D8392; letter-spacing:.8px; }
+    .white { fill:#fff; }
+    .stroke { stroke:#071D2B; stroke-opacity:.13; }
+    .line { fill:none; stroke:url(#aqua); stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .line2 { fill:none; stroke:#7ED957; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .wire { fill:none; stroke:#22C5E4; stroke-width:4; stroke-dasharray:10 14; stroke-linecap:round; opacity:.86; }
+    .device { fill:#fff; stroke:#D6E9EF; stroke-width:2; filter:url(#smallShadow); }
+    .card { fill:#fff; stroke:#DCEFF4; stroke-width:2; filter:url(#softShadow); }
+    .panel { fill:rgba(255,255,255,.86); stroke:#DCEFF4; stroke-width:2; }
+  ]]></style>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#halo)"/>
+  <rect width="1600" height="900" fill="url(#dotgrid)" opacity="0.45"/>
+  <path d="M-80 738 C 400 576, 544 864, 928 711 S 1488 549, 1690 684" fill="none" stroke="#B7EEF7" stroke-width="2" opacity=".65"/>
+  <path d="M-90 225 C 224 126, 464 279, 752 162 S 1280 72, 1670 153" fill="none" stroke="#CFE9D1" stroke-width="2" opacity=".55"/>
+
+
+<text x="90" y="100" class="title">Real-time water intelligence for organizations.</text>
+<text x="92" y="143" class="subtitle">Cities, municipalities and housing companies can access operational data through dashboards and REST APIs.</text>
+<g transform="translate(95,225)">
+
+<g transform="translate(0,0)">
+  <rect x="0" y="0" width="650" height="430" rx="28" fill="#ffffff" stroke="#DCEFF4" stroke-width="2" filter="url(#smallShadow)"/>
+  <rect x="0" y="0" width="650" height="62" rx="28" fill="#071D2B"/>
+  <rect x="0" y="38" width="650" height="24" fill="#071D2B"/>
+  <text x="28" y="40" class="small" style="fill:#ffffff; font-weight:800;">Organization Dashboard</text>
+  <rect x="28" y="86" width="110" height="80" rx="18" fill="#EAFBFF"/>
+  <rect x="156" y="86" width="110" height="80" rx="18" fill="#E9F9F7"/>
+  <rect x="284" y="86" width="338" height="80" rx="18" fill="#F0F7FF"/>
+  <path d="M36 230 C78 180, 122 202, 162 174 S246 210, 286 162 S350 172, 612 128" class="line"/>
+  <line x1="36" y1="236" x2="614" y2="236" stroke="#DCEFF4" stroke-width="2"/>
+  <line x1="36" y1="186" x2="614" y2="186" stroke="#DCEFF4" stroke-width="2"/>
+</g>
+  <rect x="44" y="116" width="170" height="92" rx="22" fill="#EAFBFF"/>
+  <text x="75" y="150" class="small">Meters online</text><text x="75" y="190" class="label">12,480</text>
+  <rect x="234" y="116" width="170" height="92" rx="22" fill="#E9F9F7"/>
+  <text x="265" y="150" class="small">Alerts</text><text x="265" y="190" class="label">17</text>
+  <rect x="424" y="116" width="170" height="92" rx="22" fill="#FFF7ED"/>
+  <text x="455" y="150" class="small">Water saved</text><text x="455" y="190" class="label">8.2 ML</text>
+</g>
+<g transform="translate(815,250)">
+  <rect x="0" y="0" width="520" height="420" rx="34" fill="#071D2B" filter="url(#softShadow)"/>
+  <text x="42" y="58" class="label" style="fill:#fff;">REST API</text>
+  <text x="42" y="92" class="small" style="fill:#BFEFF6;">Tenant-scoped access for billing, ERP and analytics.</text>
+  <rect x="42" y="125" width="436" height="250" rx="22" fill="#092233"/>
+  <text x="66" y="166" class="font" style="font-family:Consolas,Menlo,monospace;font-size:22px;fill:#9BE7F2;">GET /v1/meters/{id}/readings</text>
+  <text x="66" y="206" class="font" style="font-family:Consolas,Menlo,monospace;font-size:20px;fill:#ffffff;">{</text>
+  <text x="90" y="238" class="font" style="font-family:Consolas,Menlo,monospace;font-size:20px;fill:#ffffff;">"volume_m3": 128.42,</text>
+  <text x="90" y="270" class="font" style="font-family:Consolas,Menlo,monospace;font-size:20px;fill:#ffffff;">"temperature_class": "T90",</text>
+  <text x="90" y="302" class="font" style="font-family:Consolas,Menlo,monospace;font-size:20px;fill:#ffffff;">"status": "normal"</text>
+  <text x="66" y="334" class="font" style="font-family:Consolas,Menlo,monospace;font-size:20px;fill:#ffffff;">}</text>
+</g>
+<g transform="translate(250,685)">
+  <rect x="0" y="0" width="155" height="44" rx="22.0" fill="url(#aqua)" filter="url(#smallShadow)"/><text x="77.5" y="29.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Dashboards</text>
+<rect x="180" y="0" width="165" height="44" rx="22.0" fill="url(#greenline)" filter="url(#smallShadow)"/><text x="262.5" y="29.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Meter health</text>
+<rect x="370" y="0" width="150" height="44" rx="22.0" fill="url(#aqua)" filter="url(#smallShadow)"/><text x="445.0" y="29.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">REST API</text>
+<rect x="545" y="0" width="160" height="44" rx="22.0" fill="#0B2D42" filter="url(#smallShadow)"/><text x="625.0" y="29.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Webhooks</text>
+<rect x="730" y="0" width="195" height="44" rx="22.0" fill="url(#greenline)" filter="url(#smallShadow)"/><text x="827.5" y="29.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Billing exports</text>
+
+</g>
+<path d="M730 418 C 775 404, 795 390, 815 377" class="wire"/>
+<circle cx="760" cy="407" r="8" fill="url(#aqua)" filter="url(#glow)"/>
+<circle cx="795" cy="390" r="8" fill="url(#aqua)" filter="url(#glow)"/>
+
+</svg>

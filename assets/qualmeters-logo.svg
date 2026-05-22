@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">QualMeters logo mark</title><desc id="desc">A stylised Q formed from a water drop, meter dial and connected data point.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F7FCFD"/>
+    <stop offset="0.52" stop-color="#ECF8FA"/>
+    <stop offset="1" stop-color="#EAF7F0"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="72%" cy="18%" r="70%">
+    <stop offset="0" stop-color="#D8F8FF" stop-opacity="0.95"/>
+    <stop offset="0.55" stop-color="#EAFBFF" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#20C6E6"/>
+    <stop offset="1" stop-color="#16C8A8"/>
+  </linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B3851"/>
+    <stop offset="1" stop-color="#071D2B"/>
+  </linearGradient>
+  <linearGradient id="greenline" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16C8A8"/>
+    <stop offset="1" stop-color="#7ED957"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset="0.45" stop-color="#DDEAF0"/>
+    <stop offset="1" stop-color="#B7CDD8"/>
+  </linearGradient>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#062334" flood-opacity="0.18"/>
+  </filter>
+  <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#062334" flood-opacity="0.14"/>
+  </filter>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <pattern id="dotgrid" width="34" height="34" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#9ADBE8" opacity="0.38"/>
+  </pattern>
+  <style><![CDATA[
+    .font { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+    .title { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 52px; font-weight: 800; fill: #071D2B; letter-spacing:-1px; }
+    .subtitle { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 500; fill: #6D8392; }
+    .label { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #071D2B; }
+    .small { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #6D8392; }
+    .micro { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #6D8392; letter-spacing:.8px; }
+    .white { fill:#fff; }
+    .stroke { stroke:#071D2B; stroke-opacity:.13; }
+    .line { fill:none; stroke:url(#aqua); stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .line2 { fill:none; stroke:#7ED957; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .wire { fill:none; stroke:#22C5E4; stroke-width:4; stroke-dasharray:10 14; stroke-linecap:round; opacity:.86; }
+    .device { fill:#fff; stroke:#D6E9EF; stroke-width:2; filter:url(#smallShadow); }
+    .card { fill:#fff; stroke:#DCEFF4; stroke-width:2; filter:url(#softShadow); }
+    .panel { fill:rgba(255,255,255,.86); stroke:#DCEFF4; stroke-width:2; }
+  ]]></style>
+</defs>
+<rect width="512" height="512" rx="96" fill="url(#deep)"/>
+<circle cx="256" cy="256" r="154" fill="none" stroke="url(#aqua)" stroke-width="34" stroke-linecap="round"/>
+<path d="M318 332 L397 413" stroke="url(#greenline)" stroke-width="38" stroke-linecap="round"/>
+<path d="M256 113 C204 173 178 215 178 263 C178 318 219 357 256 357 C293 357 334 318 334 263 C334 215 312 173 256 113Z" fill="#FFFFFF" opacity="0.96"/>
+<path d="M216 267 A56 56 0 0 1 311 230" fill="none" stroke="#20C6E6" stroke-width="17" stroke-linecap="round"/>
+<circle cx="256" cy="267" r="8" fill="#071D2B"/>
+<path d="M256 267 L291 233" stroke="#071D2B" stroke-width="10" stroke-linecap="round"/>
+<circle cx="396" cy="414" r="24" fill="#7ED957" filter="url(#glow)"/>
+</svg>

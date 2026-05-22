@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Sustainability and benchmarking</title>
+<desc id="desc">Comparison between user water consumption, household size, community average and sustainability insights.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F7FCFD"/>
+    <stop offset="0.52" stop-color="#ECF8FA"/>
+    <stop offset="1" stop-color="#EAF7F0"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="72%" cy="18%" r="70%">
+    <stop offset="0" stop-color="#D8F8FF" stop-opacity="0.95"/>
+    <stop offset="0.55" stop-color="#EAFBFF" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#20C6E6"/>
+    <stop offset="1" stop-color="#16C8A8"/>
+  </linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B3851"/>
+    <stop offset="1" stop-color="#071D2B"/>
+  </linearGradient>
+  <linearGradient id="greenline" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16C8A8"/>
+    <stop offset="1" stop-color="#7ED957"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset="0.45" stop-color="#DDEAF0"/>
+    <stop offset="1" stop-color="#B7CDD8"/>
+  </linearGradient>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#062334" flood-opacity="0.18"/>
+  </filter>
+  <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#062334" flood-opacity="0.14"/>
+  </filter>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <pattern id="dotgrid" width="34" height="34" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#9ADBE8" opacity="0.38"/>
+  </pattern>
+  <style><![CDATA[
+    .font { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+    .title { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 52px; font-weight: 800; fill: #071D2B; letter-spacing:-1px; }
+    .subtitle { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 500; fill: #6D8392; }
+    .label { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #071D2B; }
+    .small { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #6D8392; }
+    .micro { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #6D8392; letter-spacing:.8px; }
+    .white { fill:#fff; }
+    .stroke { stroke:#071D2B; stroke-opacity:.13; }
+    .line { fill:none; stroke:url(#aqua); stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .line2 { fill:none; stroke:#7ED957; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .wire { fill:none; stroke:#22C5E4; stroke-width:4; stroke-dasharray:10 14; stroke-linecap:round; opacity:.86; }
+    .device { fill:#fff; stroke:#D6E9EF; stroke-width:2; filter:url(#smallShadow); }
+    .card { fill:#fff; stroke:#DCEFF4; stroke-width:2; filter:url(#softShadow); }
+    .panel { fill:rgba(255,255,255,.86); stroke:#DCEFF4; stroke-width:2; }
+  ]]></style>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#halo)"/>
+  <rect width="1600" height="900" fill="url(#dotgrid)" opacity="0.45"/>
+  <path d="M-80 738 C 400 576, 544 864, 928 711 S 1488 549, 1690 684" fill="none" stroke="#B7EEF7" stroke-width="2" opacity=".65"/>
+  <path d="M-90 225 C 224 126, 464 279, 752 162 S 1280 72, 1670 153" fill="none" stroke="#CFE9D1" stroke-width="2" opacity=".55"/>
+
+
+<text x="90" y="100" class="title">Encourage greener water habits with meaningful comparisons.</text>
+<text x="92" y="143" class="subtitle">Residents can improve their own insight by adding household context and comparing against relevant peer groups.</text>
+<g transform="translate(130,230)">
+  <rect x="0" y="0" width="650" height="520" rx="42" fill="#ffffff" stroke="#DCEFF4" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="48" y="70" class="label">Personalized consumption profile</text>
+  <text x="48" y="108" class="small">Better input creates better benchmarking.</text>
+  <g transform="translate(78,160)">
+    <circle cx="72" cy="60" r="42" fill="#EAFBFF"/><circle cx="72" cy="46" r="16" fill="url(#aqua)"/><path d="M38 104 C48 76, 124 76, 134 104" fill="url(#aqua)" opacity=".8"/>
+    <circle cx="210" cy="60" r="42" fill="#E9F9F7"/><path d="M190 86 C190 52, 210 32, 230 86" fill="none" stroke="url(#greenline)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="348" cy="60" r="42" fill="#FFF7ED"/><path d="M348 28 C312 62, 318 98, 348 110 C378 98, 384 62, 348 28Z" fill="#FFB05A"/>
+    <circle cx="486" cy="60" r="42" fill="#F0F7FF"/><path d="M456 74 C486 34, 516 74, 486 110 C468 95, 456 86, 456 74Z" fill="#2F79FF" opacity=".9"/>
+  </g>
+  <rect x="64" y="336" width="520" height="78" rx="24" fill="#F8FDFE" stroke="#DCEFF4" stroke-width="2"/>
+  <text x="94" y="383" class="small">Household size, apartment type, season and optional habits improve peer comparison.</text>
+</g>
+<g transform="translate(865,250)">
+  <rect x="0" y="0" width="500" height="440" rx="42" fill="#ffffff" stroke="#DCEFF4" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="44" y="64" class="label">Water use comparison</text>
+  <text x="44" y="100" class="small">Opt-in benchmarking helps residents understand progress.</text>
+  <rect x="72" y="157" width="80" height="230" rx="16" fill="#EAFBFF"/>
+  <rect x="212" y="205" width="80" height="182" rx="16" fill="url(#aqua)"/>
+  <rect x="352" y="125" width="80" height="262" rx="16" fill="#E9F9F7"/>
+  <text x="112" y="420" class="small" text-anchor="middle">Avg.</text><text x="252" y="420" class="small" text-anchor="middle">You</text><text x="392" y="420" class="small" text-anchor="middle">Similar</text>
+  <path d="M365 70 C350 95, 348 120, 368 140 C392 126, 398 96, 365 70Z" fill="url(#greenline)"/>
+</g>
+<path d="M780 495 C 835 500, 845 455, 865 438" class="wire"/>
+<rect x="330" y="780" width="162" height="44" rx="22.0" fill="url(#aqua)" filter="url(#smallShadow)"/><text x="411.0" y="809.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Less waste</text>
+<rect x="512" y="780" width="172" height="44" rx="22.0" fill="url(#greenline)" filter="url(#smallShadow)"/><text x="598.0" y="809.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Fair billing</text>
+<rect x="704" y="780" width="186" height="44" rx="22.0" fill="url(#aqua)" filter="url(#smallShadow)"/><text x="797.0" y="809.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Better habits</text>
+<rect x="910" y="780" width="194" height="44" rx="22.0" fill="#0B2D42" filter="url(#smallShadow)"/><text x="1007.0" y="809.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Portfolio insights</text>
+
+</svg>

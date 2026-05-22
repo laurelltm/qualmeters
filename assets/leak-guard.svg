@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Leak Guard anomaly detection</title>
+<desc id="desc">Leak detection concept with continuous flow alert and proactive investigation.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F7FCFD"/>
+    <stop offset="0.52" stop-color="#ECF8FA"/>
+    <stop offset="1" stop-color="#EAF7F0"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="72%" cy="18%" r="70%">
+    <stop offset="0" stop-color="#D8F8FF" stop-opacity="0.95"/>
+    <stop offset="0.55" stop-color="#EAFBFF" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#20C6E6"/>
+    <stop offset="1" stop-color="#16C8A8"/>
+  </linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B3851"/>
+    <stop offset="1" stop-color="#071D2B"/>
+  </linearGradient>
+  <linearGradient id="greenline" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16C8A8"/>
+    <stop offset="1" stop-color="#7ED957"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset="0.45" stop-color="#DDEAF0"/>
+    <stop offset="1" stop-color="#B7CDD8"/>
+  </linearGradient>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#062334" flood-opacity="0.18"/>
+  </filter>
+  <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#062334" flood-opacity="0.14"/>
+  </filter>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <pattern id="dotgrid" width="34" height="34" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#9ADBE8" opacity="0.38"/>
+  </pattern>
+  <style><![CDATA[
+    .font { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+    .title { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 52px; font-weight: 800; fill: #071D2B; letter-spacing:-1px; }
+    .subtitle { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 500; fill: #6D8392; }
+    .label { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #071D2B; }
+    .small { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #6D8392; }
+    .micro { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #6D8392; letter-spacing:.8px; }
+    .white { fill:#fff; }
+    .stroke { stroke:#071D2B; stroke-opacity:.13; }
+    .line { fill:none; stroke:url(#aqua); stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .line2 { fill:none; stroke:#7ED957; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .wire { fill:none; stroke:#22C5E4; stroke-width:4; stroke-dasharray:10 14; stroke-linecap:round; opacity:.86; }
+    .device { fill:#fff; stroke:#D6E9EF; stroke-width:2; filter:url(#smallShadow); }
+    .card { fill:#fff; stroke:#DCEFF4; stroke-width:2; filter:url(#softShadow); }
+    .panel { fill:rgba(255,255,255,.86); stroke:#DCEFF4; stroke-width:2; }
+  ]]></style>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#halo)"/>
+  <rect width="1600" height="900" fill="url(#dotgrid)" opacity="0.45"/>
+  <path d="M-80 738 C 400 576, 544 864, 928 711 S 1488 549, 1690 684" fill="none" stroke="#B7EEF7" stroke-width="2" opacity=".65"/>
+  <path d="M-90 225 C 224 126, 464 279, 752 162 S 1280 72, 1670 153" fill="none" stroke="#CFE9D1" stroke-width="2" opacity=".55"/>
+
+
+<text x="90" y="100" class="title">Leak Guard finds abnormal consumption before it becomes damage.</text>
+<text x="92" y="143" class="subtitle">Continuous flow, nighttime use and sudden spikes are converted into actionable alerts.</text>
+<g transform="translate(110,260)">
+  <rect x="0" y="200" width="670" height="160" rx="80" fill="#D6E9EF" stroke="#A7C5D0" stroke-width="4" filter="url(#softShadow)"/>
+  <rect x="-60" y="243" width="800" height="72" rx="36" fill="#EAFBFF" opacity=".92"/>
+  <path d="M-20 280 C60 244, 130 326, 210 280 S350 244, 430 280 S580 326, 710 280" fill="none" stroke="url(#aqua)" stroke-width="12" stroke-linecap="round" opacity=".75"/>
+  <path d="M360 255 C335 285 322 310 322 338 C322 378 352 405 380 405 C408 405 438 378 438 338 C438 310 420 285 398 255 C388 244 372 244 360 255Z" fill="#FFEEF0" stroke="#FF6B6B" stroke-width="5"/>
+  <text x="380" y="352" class="label" text-anchor="middle" style="fill:#FF6B6B;">!</text>
+  <text x="380" y="455" class="label" text-anchor="middle">Continuous-flow alert</text>
+</g>
+<g transform="translate(870,250)">
+  <rect x="0" y="0" width="500" height="460" rx="42" fill="#ffffff" stroke="#DCEFF4" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="44" y="64" class="label">Leak Guard Analytics</text>
+  <text x="44" y="100" class="small">Detection rules for different building and household profiles.</text>
+  <rect x="44" y="132" width="412" height="252" rx="22" fill="#F8FDFE" stroke="#DCEFF4" stroke-width="2"/>
+  <path d="M70 326 C110 312, 148 310, 188 315 S260 316, 300 256 S368 180, 428 214" fill="none" stroke="#FF6B6B" stroke-width="7" stroke-linecap="round"/>
+  <path d="M70 330 H428" stroke="#DCEFF4" stroke-width="2"/><path d="M70 260 H428" stroke="#DCEFF4" stroke-width="2"/><path d="M70 190 H428" stroke="#DCEFF4" stroke-width="2"/>
+  <rect x="44" y="405" width="156" height="42" rx="21.0" fill="url(#aqua)" filter="url(#smallShadow)"/><text x="122.0" y="433.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Night flow</text>
+<rect x="220" y="405" width="124" height="42" rx="21.0" fill="#FFB05A" filter="url(#smallShadow)"/><text x="282.0" y="433.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Spike</text>
+<rect x="362" y="405" width="96" height="42" rx="21.0" fill="#FF6B6B" filter="url(#smallShadow)"/><text x="410.0" y="433.0" class="micro" fill="#fff" text-anchor="middle" style="fill:#fff;">Leak</text>
+
+</g>
+<path d="M765 525 C 810 488, 840 450, 870 410" class="wire"/>
+</svg>

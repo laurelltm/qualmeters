@@ -1,0 +1,14 @@
+{
+  "name": "qualmeters-static-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node tools/generate-static-site.mjs",
+    "test": "node --test test/*.test.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
