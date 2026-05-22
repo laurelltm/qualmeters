@@ -99,6 +99,13 @@ test('company/contact page preserves the selected strategic partnership inquiry 
   }
 });
 
+test('contact form uses production-facing confirmation copy', async () => {
+  const script = await readSiteFile('script.js');
+
+  assert.match(script, /Thank you\. We will review your request and follow up shortly\./);
+  assert.doesNotMatch(script, /static prototype|captured the inquiry locally|connect a production sales channel/i);
+});
+
 test('strategic partnership pages list only the Helsinki headquarters office', async () => {
   for (const route of ['company/index.html', 'contact/index.html', 'request-demo/index.html']) {
     const html = await readSiteFile(route);

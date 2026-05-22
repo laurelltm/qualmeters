@@ -136,7 +136,7 @@ document.querySelectorAll('[data-contact-form]').forEach((form) => {
       return;
     }
     if (status) {
-      status.textContent = 'Thank you. This static prototype captured the inquiry locally; connect a production sales channel before publishing.';
+      status.textContent = 'Thank you. We will review your request and follow up shortly.';
     }
     form.reset();
   });
