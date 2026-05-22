@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
 <title id="title">Contact and sales channel</title>
-<desc id="desc">Enterprise sales contact with placeholder address and consultation CTA.</desc>
+<desc id="desc">Enterprise sales contact with Helsinki headquarters address and consultation CTA.</desc>
 
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -90,7 +90,7 @@
   <text x="48" y="212" class="small" style="fill:#BFEFF6;">• REST API and billing integration needs</text>
   <text x="48" y="254" class="small" style="fill:#BFEFF6;">• Resident portal and communication plan</text>
   <text x="48" y="312" class="small" style="fill:#fff;font-weight:800;">QualMeters Oy</text>
-  <text x="48" y="342" class="small" style="fill:#BFEFF6;">[Street Address], [Postal Code] [City], Finland</text>
+  <text x="48" y="342" class="small" style="fill:#BFEFF6;">Muonamiehentie 11, 00390 Helsinki, Finland</text>
 </g>
 <path d="M705 475 C 760 460, 800 430, 830 410" class="wire"/>
 </svg>

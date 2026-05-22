@@ -4,7 +4,7 @@
 
 **Website purpose:** position QualMeters Oy as an enterprise-grade provider of wireless water metering systems for housing companies, municipalities, cities, developers and property portfolios.
 
-**Company address placeholder:** QualMeters Oy, [Street Address], [Postal Code] [City], Finland.
+**Company address:** QualMeters Oy, Muonamiehentie 11, 00390 Helsinki, Finland.
 
 **Primary sales CTA across the site:** **Request a demo**
 **Secondary CTA:** **Talk to a metering specialist**
@@ -843,8 +843,8 @@ To make water consumption measurable, understandable and actionable for every st
 ### Company details
 
 QualMeters Oy
-[Street Address]
-[Postal Code] [City]
+Muonamiehentie 11
+00390 Helsinki
 Finland
 
 ### CTA
@@ -885,12 +885,12 @@ Finland
 ### Contact details
 
 QualMeters Oy
-[Street Address]
-[Postal Code] [City]
+Muonamiehentie 11
+00390 Helsinki
 Finland
 
-Email: sales@qualmeters.example
-Phone: +358 [phone number]
+Email: sales@qualmeters.com
+Phone: +358 40 580 4819
 
 ### CTA button
 
@@ -1135,7 +1135,7 @@ This is the recommended component order for the final website implementation.
 11. Deployment lifecycle with `deployment-lifecycle.svg`
 12. Security and governance strip with `security-governance.svg`
 13. Final contact CTA with `contact-sales-channel.svg`
-14. Footer with placeholder address, quick links and sales contact
+14. Footer with company address, quick links and sales contact
 
 ---
 
@@ -1235,5 +1235,5 @@ Before publishing the final website, validate the following business and technic
 - Data retention terms and privacy policy wording
 - API availability, rate limits and supported endpoints
 - Service level commitments and support channels
-- Final company address, email and phone number
+- Confirmed company address, email and phone number
 - Whether pricing is shown publicly or handled through sales consultation

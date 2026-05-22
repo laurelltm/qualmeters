@@ -65,6 +65,10 @@ const footerColumns = [
   ['Company', [['About', '/company/'], ['Demo', '/request-demo/'], ['Contact', '/contact/']]],
 ];
 
+const companyAddressHtml = 'QualMeters Oy<br>Muonamiehentie 11<br>00390 Helsinki, Finland';
+const companyEmail = 'sales@qualmeters.com';
+const companyPhone = '+358 40 580 4819';
+
 function escapeHtml(value = '') {
   return value
     .replace(/—/g, ':')
@@ -221,7 +225,7 @@ function renderSections(page, sections) {
   }
   if (page.route === '/contact') {
     const supporting = sections.find((section) => section.title === 'Sales page supporting copy');
-    return `<section class="section"><div class="section-inner contact-grid"><div>${supporting ? `<div class="section-heading"><p class="eyebrow">Sales channel</p><h2>Start with your buildings and requirements.</h2></div>${renderParagraphs(supporting.body, page.route)}` : ''}<div class="contact-details"><h3>QualMeters Oy</h3><p>[Street Address]<br>[Postal Code] [City], Finland</p><p><strong>Email:</strong> sales@qualmeters.example<br><strong>Phone:</strong> +358 [phone number]</p></div></div>${contactForm()}</div></section>`;
+    return `<section class="section"><div class="section-inner contact-grid"><div>${supporting ? `<div class="section-heading"><p class="eyebrow">Sales channel</p><h2>Start with your buildings and requirements.</h2></div>${renderParagraphs(supporting.body, page.route)}` : ''}<div class="contact-details"><h3>QualMeters Oy</h3><p>${companyAddressHtml}</p><p><strong>Email:</strong> ${companyEmail}<br><strong>Phone:</strong> ${companyPhone}</p></div></div>${contactForm()}</div></section>`;
   }
   return sections.map((section, index) => {
     const accent = index % 2 === 1 ? ' section-muted' : '';
@@ -314,7 +318,7 @@ function renderHeader(currentRoute, activeRoute = currentRoute) {
 }
 
 function renderFooter(currentRoute) {
-  return `<section class="global-cta"><div><p class="eyebrow">Sales consultation</p><h2>Ready to see what your water data could become?</h2><p>Share your building type, meter count, communication requirements and integration needs. QualMeters will help you map the right deployment model and next steps.</p><p class="microcopy">No obligation. We will start by understanding your existing meters, buildings and goals.</p></div><img src="${relativeUrl(currentRoute, '/assets/contact-sales-channel.svg')}" alt="QualMeters sales consultation channel"><a class="button button-primary" href="${relativeUrl(currentRoute, '/company/')}">Request a demo</a></section><footer class="site-footer"><div class="footer-brand"><img src="${relativeUrl(currentRoute, '/assets/qualmeters-logo-horizontal.svg')}" alt="QualMeters Oy"><p>Managed smart water metering for buildings, municipalities and property portfolios.</p><p>QualMeters Oy<br>[Street Address]<br>[Postal Code] [City], Finland</p></div>${footerColumns.map(([heading, links]) => `<nav class="footer-links" aria-label="${heading} footer links"><h2>${heading}</h2>${links.map(([label, href]) => `<a href="${relativeUrl(currentRoute, href)}">${label}</a>`).join('')}</nav>`).join('')}</footer>`;
+  return `<section class="global-cta"><div><p class="eyebrow">Sales consultation</p><h2>Ready to see what your water data could become?</h2><p>Share your building type, meter count, communication requirements and integration needs. QualMeters will help you map the right deployment model and next steps.</p><p class="microcopy">No obligation. We will start by understanding your existing meters, buildings and goals.</p></div><img src="${relativeUrl(currentRoute, '/assets/contact-sales-channel.svg')}" alt="QualMeters sales consultation channel"><a class="button button-primary" href="${relativeUrl(currentRoute, '/company/')}">Request a demo</a></section><footer class="site-footer"><div class="footer-brand"><img src="${relativeUrl(currentRoute, '/assets/qualmeters-logo-horizontal.svg')}" alt="QualMeters Oy"><p>Managed smart water metering for buildings, municipalities and property portfolios.</p><p>${companyAddressHtml}</p></div>${footerColumns.map(([heading, links]) => `<nav class="footer-links" aria-label="${heading} footer links"><h2>${heading}</h2>${links.map(([label, href]) => `<a href="${relativeUrl(currentRoute, href)}">${label}</a>`).join('')}</nav>`).join('')}</footer>`;
 }
 
 function renderShell({ title, description, route, bodyClass = 'inner-page', main }) {

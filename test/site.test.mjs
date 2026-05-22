@@ -85,6 +85,32 @@ test('static pages reference local assets, shared CSS and shared JavaScript', as
   }
 });
 
+test('published pages use final QualMeters contact details instead of placeholders', async () => {
+  const placeholderPatterns = [
+    /Street Address/,
+    /Postal Code/,
+    /\[City\]/,
+    /sales@qualmeters\.example/,
+    /\[phone number\]/,
+    /placeholder address/i
+  ];
+
+  for (const route of expectedRoutes) {
+    const html = await readSiteFile(route);
+
+    assert.match(html, /QualMeters Oy<br>Muonamiehentie 11<br>00390 Helsinki, Finland/, `${route} should show the final company address`);
+    for (const pattern of placeholderPatterns) {
+      assert.doesNotMatch(html, pattern, `${route} should not expose ${pattern}`);
+    }
+  }
+
+  const contactAsset = await readSiteFile('assets/contact-sales-channel.svg');
+  assert.match(contactAsset, /Muonamiehentie 11, 00390 Helsinki, Finland/);
+  for (const pattern of placeholderPatterns) {
+    assert.doesNotMatch(contactAsset, pattern, `contact sales asset should not expose ${pattern}`);
+  }
+});
+
 test('mobile navigation opens as a viewport overlay below the sticky header', async () => {
   const css = await readSiteFile('styles.css');
   const mobileNavBlock = css.match(/\.mobile-nav\s*{(?<body>[^}]*)}/s)?.groups?.body ?? '';
