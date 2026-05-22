@@ -209,7 +209,7 @@ With NB-IoT meters, each meter can send readings directly to the QualMeters clou
 
 ### Section: A common data model for every reading
 
-Regardless of how the reading arrives, the platform should store data in a common structure: meter identity, apartment or property association, timestamp, volume, temperature class, communication source, reading quality, alarm state and device health. This keeps dashboards, APIs and resident portals independent from the communication technology used in the field.
+Regardless of how the reading arrives, the platform stores data in a common structure: meter identity, apartment or property association, timestamp, volume, temperature class, communication source, reading quality, alarm state and device health. This keeps dashboards, APIs and resident portals independent from the communication technology used in the field.
 
 ### Section: Platform capabilities
 
@@ -219,7 +219,7 @@ Regardless of how the reading arrives, the platform should store data in a commo
 
 **Organization tools:** Property dashboards, fleet health, leak indicators, exports, API access and alert management.
 
-**Integration layer:** REST API, webhook-ready event model, billing exports and future protocol adapters.
+**Integration layer:** REST API, webhook-ready event model, billing exports and additional protocol adapters.
 
 **Security foundation:** Tenant separation, role-based access, encrypted data transport and structured audit logging.
 
@@ -319,7 +319,7 @@ Modern apartment buildings commonly need separate measurement for cold and warm 
 
 The meter is not only hardware. It needs a lifecycle record: installation date, serial number, MID data, temperature class, apartment association, communication method, firmware information, reading schedule and maintenance status.
 
-QualMeters should maintain this lifecycle information so organizations can track device status, plan replacements and keep metering data trustworthy over time.
+QualMeters maintains this lifecycle information so organizations can track device status, plan replacements and keep metering data trustworthy over time.
 
 ### CTA
 
@@ -346,7 +346,7 @@ QualMeters should maintain this lifecycle information so organizations can track
 
 ### Section: What the gateway does
 
-The gateway acts as the bridge between field meters and cloud intelligence. It should support local protocol adapters, secure uplink communication, device health reporting, buffered transmission and remote diagnostics.
+The gateway acts as the bridge between field meters and cloud intelligence. It supports local protocol adapters, secure uplink communication, device health reporting, buffered transmission and remote diagnostics.
 
 **Feature copy:**
 
@@ -385,7 +385,7 @@ A gateway deployment is especially useful in apartment buildings with many meter
 
 ### Section: Data that organizations can trust
 
-The platform should do more than store numbers. It should understand meter identity, property hierarchy, apartment association, reading quality, alarm states and communication health. This enables better operational decisions and cleaner integrations.
+The platform does more than store numbers. It connects meter identity, property hierarchy, apartment association, reading quality, alarm states and communication health. This enables better operational decisions and cleaner integrations.
 
 ### Section: Key platform modules
 
@@ -439,9 +439,9 @@ The platform should do more than store numbers. It should understand meter ident
 
 **Data exports:** Support CSV, Excel and scheduled exports for teams that are not ready for full API integration.
 
-### Section: Recommended endpoint model
+### Section: Endpoint model
 
-The public API should be versioned and tenant-scoped.
+The public API is versioned and tenant-scoped.
 
 ```text
 GET /v1/meters
@@ -496,7 +496,7 @@ Each meter includes a QR code. When the resident scans the code, the correct met
 
 No complex setup is needed for first access. The resident scans the meter, confirms the current reading and begins viewing consumption in a clear, mobile-first interface.
 
-**Implementation note for production:** QR code plus current reading should be rate-limited and can be strengthened with tenant invitations, property manager approval or account-based unit association when higher assurance is required.
+**Access hardening:** QR code plus current reading verification is rate-limited and can be strengthened with tenant invitations, property manager approval or account-based unit association when higher assurance is required.
 
 ### Section: What residents can see
 
@@ -510,7 +510,7 @@ No complex setup is needed for first access. The resident scans the meter, confi
 
 Residents can choose to add information such as household size. The system can then provide more relevant comparison data, for example comparing a two-person household with similar households rather than with the entire building average.
 
-Privacy must be central. Benchmarking should use aggregated and anonymized peer groups so residents receive useful insight without exposing individual neighbors.
+Privacy must be central. Benchmarking uses aggregated and anonymized peer groups so residents receive useful insight without exposing individual neighbors.
 
 ### CTA
 
@@ -584,7 +584,7 @@ When residents only see water costs after the fact, it is difficult to connect d
 
 ### Section: Better benchmarking
 
-Simple building averages can be misleading. QualMeters should allow residents to add optional context, such as household size, so comparisons become more meaningful. A single-person household should not be evaluated in the same way as a family of five.
+Simple building averages can be misleading. QualMeters lets residents add optional context, such as household size, so comparisons become more meaningful. A single-person household is not evaluated in the same way as a family of five.
 
 ### Section: Sustainability features
 
@@ -691,7 +691,7 @@ Municipal water data must be reliable, secure, integrated and maintainable. Qual
 
 ### Section: Why early specification matters
 
-Meter locations, wireless coverage, electrical supply, gateway placement and data requirements should be considered before installation. Early planning helps reduce rework and supports reliable data collection from day one.
+Meter locations, wireless coverage, electrical supply, gateway placement and data requirements are considered before installation. Early planning helps reduce rework and supports reliable data collection from day one.
 
 ### Section: Development checklist
 
@@ -770,7 +770,7 @@ Meter locations, wireless coverage, electrical supply, gateway placement and dat
 
 ### Section: Commissioning quality matters
 
-Every meter should be connected to the correct apartment, temperature class, billing object and resident access process. QualMeters should treat commissioning as a data quality milestone, not just a physical installation task.
+Every meter is connected to the correct apartment, temperature class, billing object and resident access process. QualMeters treats commissioning as a data quality milestone, not just a physical installation task.
 
 ### CTA
 
@@ -792,20 +792,20 @@ Every meter should be connected to the correct apartment, temperature class, bil
 
 **H1:** Water data needs infrastructure-grade trust.
 
-**Hero body:** QualMeters should protect meter data from the device layer to dashboards and APIs. The platform is specified around encrypted communication, role-based access, tenant separation, audit logs and privacy-aware resident features.
+**Hero body:** QualMeters protects meter data from the device layer to dashboards and APIs. The platform uses encrypted communication, role-based access, tenant separation, audit logs and privacy-aware resident features.
 
 ### Section: Security principles
 
-**Encrypt data in transit:** Gateway and NB-IoT ingestion should use secure transport.
+**Encrypt data in transit:** Gateway and NB-IoT ingestion paths use secure transport.
 **Separate tenants:** Each organization sees only its authorized meters, apartments and properties.
-**Control access:** Roles should define what residents, property managers, municipal users, support teams and administrators can see.
+**Control access:** Roles define what residents, property managers, municipal users, support teams and administrators can see.
 **Audit sensitive actions:** Log API access, account changes, device changes and data export activity.
 **Minimize personal data:** Store only what is needed for the service and resident experience.
 **Protect comparison features:** Use aggregated peer groups and privacy thresholds before showing benchmark data.
 
 ### Section: Resident access governance
 
-QR-based access is user-friendly, but production systems should protect against guessing and misuse. Recommended safeguards include rate limiting, temporary access tokens, confirmation of current visible reading, optional resident account creation, property manager-controlled invitations and logging of access attempts.
+QR-based access is user-friendly, and the service protects against guessing and misuse. Safeguards include rate limiting, temporary access tokens, confirmation of current visible reading, optional resident account creation, property manager-controlled invitations and logging of access attempts.
 
 ### CTA
 
@@ -835,10 +835,10 @@ To make water consumption measurable, understandable and actionable for every st
 
 ### What we believe
 
-**Water data should be trustworthy.** Accurate measurement and clear data quality matter.
-**Residents should understand their own consumption.** Visibility supports fairness and better habits.
-**Organizations should not be locked into one communication model.** The platform should support common protocols and future adapters.
-**Sustainability should be practical.** Leak awareness, benchmarking and clear feedback create measurable progress.
+**Water data is trustworthy.** Accurate measurement and clear data quality matter.
+**Residents understand their own consumption.** Visibility supports fairness and better habits.
+**Organizations stay free from one communication model.** The platform supports common protocols and additional adapters.
+**Sustainability is practical.** Leak awareness, benchmarking and clear feedback create measurable progress.
 
 ### Company details
 
@@ -926,7 +926,7 @@ Yes. The system is designed for apartment-level cold and warm water metering. Ne
 
 ### What communication methods do you support?
 
-QualMeters is specified around common metering communication methods including Wireless M-Bus, Modbus and NB-IoT. Additional adapters can be added based on project requirements.
+QualMeters supports common metering communication methods including Wireless M-Bus, Modbus and NB-IoT. Additional adapters can be added based on project requirements.
 
 ### Do we need a building gateway?
 
@@ -934,7 +934,7 @@ Not always. A building gateway is useful when many local meters are collected th
 
 ### Can residents see their own consumption?
 
-Yes. Residents can access their own meter view through a portal. The intended access flow uses the QR code on the meter and current meter reading verification.
+Yes. Residents can access their own meter view through a portal. Access uses the QR code on the meter and current meter reading verification.
 
 ### Can organizations access the data through an API?
 
@@ -946,7 +946,7 @@ Yes. Leak Guard is specified to detect abnormal patterns such as continuous flow
 
 ### How does consumption comparison work?
 
-Residents can compare their water use against suitable peer groups. Better comparison data can be provided when users add optional context such as household size. Comparison features should use anonymized and aggregated data.
+Residents can compare their water use against suitable peer groups. Better comparison data can be provided when users add optional context such as household size. Comparison features use anonymized and aggregated data.
 
 ### Is QualMeters suitable for new buildings?
 

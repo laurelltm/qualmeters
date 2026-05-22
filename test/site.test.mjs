@@ -51,6 +51,11 @@ async function readSiteFile(relativePath) {
   return readFile(path.join(root, relativePath), 'utf8');
 }
 
+function publicUrlForRoute(route) {
+  if (route === 'index.html') return 'https://qualmeters.com/';
+  return `https://qualmeters.com/${route.replace(/index\.html$/, '')}`;
+}
+
 test('generates every sitemap route as a folder-based static page', async () => {
   for (const route of expectedRoutes) {
     await access(path.join(root, route));
@@ -108,6 +113,63 @@ test('published pages use final QualMeters contact details instead of placeholde
   assert.match(contactAsset, /Muonamiehentie 11, 00390 Helsinki, Finland/);
   for (const pattern of placeholderPatterns) {
     assert.doesNotMatch(contactAsset, pattern, `contact sales asset should not expose ${pattern}`);
+  }
+});
+
+test('published pages avoid internal production notes and draft-spec wording', async () => {
+  const draftPatterns = [
+    /Implementation note for production/i,
+    /\bshould\b/i,
+    /\bspecified around\b/i,
+    /\bintended access flow\b/i,
+    /\bfuture protocol adapters\b/i,
+  ];
+
+  for (const route of expectedRoutes) {
+    const html = await readSiteFile(route);
+    for (const pattern of draftPatterns) {
+      assert.doesNotMatch(html, pattern, `${route} should not expose internal draft wording: ${pattern}`);
+    }
+  }
+});
+
+test('published pages include canonical and social metadata', async () => {
+  for (const route of expectedRoutes) {
+    const html = await readSiteFile(route);
+    const publicUrl = publicUrlForRoute(route);
+
+    assert.match(html, new RegExp(`<link rel="canonical" href="${publicUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">`), `${route} should include canonical URL`);
+    assert.match(html, /<meta property="og:type" content="website">/, `${route} should include Open Graph type`);
+    assert.match(html, /<meta property="og:title" content="[^"]+">/, `${route} should include Open Graph title`);
+    assert.match(html, /<meta property="og:description" content="[^"]+">/, `${route} should include Open Graph description`);
+    assert.match(html, new RegExp(`<meta property="og:url" content="${publicUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">`), `${route} should include Open Graph URL`);
+    assert.match(html, /<meta property="og:image" content="https:\/\/qualmeters\.com\/assets\/[^"]+\.svg">/, `${route} should include Open Graph image`);
+    assert.match(html, /<meta name="twitter:card" content="summary_large_image">/, `${route} should include Twitter card`);
+  }
+});
+
+test('sitemap and robots files cover all public routes', async () => {
+  const sitemap = await readSiteFile('sitemap.xml');
+  const robots = await readSiteFile('robots.txt');
+
+  assert.match(robots, /User-agent: \*/);
+  assert.match(robots, /Allow: \//);
+  assert.match(robots, /Sitemap: https:\/\/qualmeters\.com\/sitemap\.xml/);
+
+  for (const route of expectedRoutes) {
+    assert.match(sitemap, new RegExp(`<loc>${publicUrlForRoute(route).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</loc>`));
+  }
+});
+
+test('hero images use descriptive alt text instead of generic illustration labels', async () => {
+  for (const route of expectedRoutes) {
+    const html = await readSiteFile(route);
+    const imageAlts = [...html.matchAll(/<img\b[^>]*\balt="([^"]*)"[^>]*>/g)].map((match) => match[1]);
+
+    for (const alt of imageAlts) {
+      assert.notEqual(alt.trim(), '', `${route} should not expose empty image alt text`);
+      assert.doesNotMatch(alt, /\billustration\b/i, `${route} should use specific image alt text`);
+    }
   }
 });
 

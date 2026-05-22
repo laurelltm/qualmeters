@@ -68,6 +68,23 @@ const footerColumns = [
 const companyAddressHtml = 'QualMeters Oy<br>Muonamiehentie 11<br>00390 Helsinki, Finland';
 const companyEmail = 'sales@qualmeters.com';
 const companyPhone = '+358 40 580 4819';
+const siteUrl = 'https://qualmeters.com';
+const defaultSocialImage = 'hero-smart-water-network.svg';
+
+const imageAltText = {
+  'hero-smart-water-network.svg': 'Smart water meter data flowing from buildings through gateways and NB-IoT to QualMeters cloud dashboards',
+  'system-architecture.svg': 'QualMeters system architecture connecting meters, gateways, cloud services and user portals',
+  'connectivity-protocols.svg': 'Supported metering connectivity protocols: Modbus, Wireless M-Bus, NB-IoT and REST API',
+  'ultrasonic-meter-pair.svg': 'Cold and warm ultrasonic water meter pair for apartment-level measurement',
+  'resident-portal-qr.svg': 'Resident scanning a meter QR code to open their personal water consumption portal',
+  'utility-dashboard-api.svg': 'Utility dashboard and API integration view for meter readings, alerts and device health',
+  'leak-guard.svg': 'Leak Guard anomaly detection showing continuous flow alerts and investigation workflow',
+  'sustainability-benchmarking.svg': 'Water consumption benchmarking across residents, households and property portfolios',
+  'deployment-lifecycle.svg': 'QualMeters deployment lifecycle from survey and installation to commissioning and monitoring',
+  'security-governance.svg': 'Security governance controls for encrypted communication, tenant boundaries and audit logs',
+  'contact-sales-channel.svg': 'QualMeters architecture review request with Helsinki headquarters contact details',
+  'qualmeters-logo-horizontal.svg': 'QualMeters Oy horizontal logo',
+};
 
 function escapeHtml(value = '') {
   return value
@@ -289,6 +306,38 @@ function versionedAssetUrl(currentRoute, target) {
   return `${relativeUrl(currentRoute, target)}?v=${assetVersion}`;
 }
 
+function publicUrl(route) {
+  if (route === '/') return `${siteUrl}/`;
+  return `${siteUrl}${normalizeRoute(route)}/`;
+}
+
+function absoluteAssetUrl(target) {
+  return `${siteUrl}/${target.replace(/^\/+/, '')}`;
+}
+
+function socialImageUrl(image = defaultSocialImage) {
+  return absoluteAssetUrl(`/assets/${image}`);
+}
+
+function imageAlt(image) {
+  return imageAltText[image] || 'QualMeters smart water metering system view';
+}
+
+function renderSeoMeta({ title, description, route, image = defaultSocialImage }) {
+  const canonical = publicUrl(route);
+  const socialImage = socialImageUrl(image);
+  return `  <link rel="canonical" href="${escapeHtml(canonical)}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${escapeHtml(canonical)}">
+  <meta property="og:image" content="${escapeHtml(socialImage)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${escapeHtml(socialImage)}">`;
+}
+
 function isExactRoute(activeRoute, href) {
   return normalizeRoute(activeRoute) === normalizeRoute(href);
 }
@@ -321,7 +370,7 @@ function renderFooter(currentRoute) {
   return `<section class="global-cta"><div><p class="eyebrow">Sales consultation</p><h2>Ready to see what your water data could become?</h2><p>Share your building type, meter count, communication requirements and integration needs. QualMeters will help you map the right deployment model and next steps.</p><p class="microcopy">No obligation. We will start by understanding your existing meters, buildings and goals.</p></div><img src="${relativeUrl(currentRoute, '/assets/contact-sales-channel.svg')}" alt="QualMeters sales consultation channel"><a class="button button-primary" href="${relativeUrl(currentRoute, '/company/')}">Request a demo</a></section><footer class="site-footer"><div class="footer-brand"><img src="${relativeUrl(currentRoute, '/assets/qualmeters-logo-horizontal.svg')}" alt="QualMeters Oy"><p>Managed smart water metering for buildings, municipalities and property portfolios.</p><p>${companyAddressHtml}</p></div>${footerColumns.map(([heading, links]) => `<nav class="footer-links" aria-label="${heading} footer links"><h2>${heading}</h2>${links.map(([label, href]) => `<a href="${relativeUrl(currentRoute, href)}">${label}</a>`).join('')}</nav>`).join('')}</footer>`;
 }
 
-function renderShell({ title, description, route, bodyClass = 'inner-page', main }) {
+function renderShell({ title, description, route, image = defaultSocialImage, bodyClass = 'inner-page', main }) {
   const activeRoute = route === '/contact' || route === '/request-demo' ? '/company' : route;
   return `<!doctype html>
 <html lang="en">
@@ -330,6 +379,7 @@ function renderShell({ title, description, route, bodyClass = 'inner-page', main
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
+${renderSeoMeta({ title, description, route, image })}
   <link rel="icon" href="${relativeUrl(route, '/assets/qualmeters-logo.svg')}" type="image/svg+xml">
   <link rel="stylesheet" href="${versionedAssetUrl(route, '/styles.css')}">
 </head>
@@ -389,6 +439,7 @@ function renderSelectedSolutionsPage(page) {
     title: 'Solutions - QualMeters Oy',
     description: 'Infrastructure-grade QualMeters solutions for housing companies, cities, municipalities, developers and property portfolios.',
     route: page.route,
+    image: 'system-architecture.svg',
     main,
   });
 }
@@ -430,6 +481,7 @@ function renderSelectedResourcesPage(page) {
     title: 'Enterprise Readiness & Operations - QualMeters Oy',
     description: 'QualMeters deployment, security and governance resources for enterprise water metering programs.',
     route: page.route,
+    image: 'deployment-lifecycle.svg',
     main,
   });
 }
@@ -482,6 +534,7 @@ function renderSelectedCompanyPage(page) {
     title: 'QualMeters - Strategic Partnership Contact',
     description: 'Schedule a QualMeters architecture review for smart water metering, telemetry, integrations and deployment planning.',
     route: page.route,
+    image: 'contact-sales-channel.svg',
     main,
   });
 }
@@ -506,6 +559,7 @@ function renderPage(page) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(meta.seoTitle)}</title>
   <meta name="description" content="${escapeHtml(meta.description)}">
+${renderSeoMeta({ title: meta.seoTitle, description: meta.description, route: page.route, image: page.image })}
   <link rel="icon" href="${relativeUrl(page.route, '/assets/qualmeters-logo.svg')}" type="image/svg+xml">
   <link rel="stylesheet" href="${versionedAssetUrl(page.route, '/styles.css')}">
 </head>
@@ -518,7 +572,7 @@ function renderPage(page) {
         <h1>${inlineMarkdown(meta.h1)}</h1>${heroBodyHtml}
         <div class="hero-actions"><a class="button button-primary" href="${relativeUrl(page.route, '/company/')}">${escapeHtml(meta.primary)}</a>${meta.secondary ? `<a class="button button-secondary" href="${relativeUrl(page.route, page.route === '/' ? '/platform/' : '/company/')}">${escapeHtml(meta.secondary)}</a>` : ''}</div>${proofHtml}
       </div>
-      <div class="hero-visual"><img src="${relativeUrl(page.route, `/assets/${page.image}`)}" alt="${escapeHtml(page.title)} illustration"></div>
+      <div class="hero-visual"><img src="${relativeUrl(page.route, `/assets/${page.image}`)}" alt="${escapeHtml(imageAlt(page.image))}"></div>
     </section>${homeExtrasHtml}
     ${renderSections(page, sections)}
   </main>
@@ -533,5 +587,20 @@ for (const page of pages) {
   await mkdir(targetDir, { recursive: true });
   await writeFile(path.join(targetDir, 'index.html'), renderPage(page));
 }
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map((page) => `  <url><loc>${publicUrl(page.route)}</loc></url>`).join('\n')}
+</urlset>
+`;
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${siteUrl}/sitemap.xml
+`;
+
+await writeFile(path.join(root, 'sitemap.xml'), sitemapXml);
+await writeFile(path.join(root, 'robots.txt'), robotsTxt);
 
 console.log(`Generated ${pages.length} pages.`);

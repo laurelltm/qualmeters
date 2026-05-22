@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QualMeters Platform | Wireless Water Metering Architecture</title>
   <meta name="description" content="Explore the QualMeters smart water metering platform: ultrasonic meters, gateway collection, NB-IoT direct communication, cloud analytics, resident portals and REST APIs.">
+  <link rel="canonical" href="https://qualmeters.com/platform/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="QualMeters Platform | Wireless Water Metering Architecture">
+  <meta property="og:description" content="Explore the QualMeters smart water metering platform: ultrasonic meters, gateway collection, NB-IoT direct communication, cloud analytics, resident portals and REST APIs.">
+  <meta property="og:url" content="https://qualmeters.com/platform/">
+  <meta property="og:image" content="https://qualmeters.com/assets/system-architecture.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QualMeters Platform | Wireless Water Metering Architecture">
+  <meta name="twitter:description" content="Explore the QualMeters smart water metering platform: ultrasonic meters, gateway collection, NB-IoT direct communication, cloud analytics, resident portals and REST APIs.">
+  <meta name="twitter:image" content="https://qualmeters.com/assets/system-architecture.svg">
   <link rel="icon" href="../assets/qualmeters-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=mobile-nav-4754003">
 </head>
@@ -18,7 +28,7 @@
         <p class="hero-body">QualMeters supports both building-level data aggregation and direct NB-IoT meter communication. In both cases, meter readings are normalized into a secure cloud platform that powers resident portals, organization dashboards, alerts and REST API integrations.</p>
         <div class="hero-actions"><a class="button button-primary" href="../company/">See the architecture</a><a class="button button-secondary" href="../company/">Discuss your deployment model</a></div>
       </div>
-      <div class="hero-visual"><img src="../assets/system-architecture.svg" alt="Platform overview illustration"></div>
+      <div class="hero-visual"><img src="../assets/system-architecture.svg" alt="QualMeters system architecture connecting meters, gateways, cloud services and user portals"></div>
     </section>
     <section class="section"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">Platform overview</p><h2>Model A : Building gateway deployment</h2></div><div class="section-copy"><p>In apartment buildings and dense property environments, a local gateway can collect data from meters using Wireless M-Bus, Modbus and other supported protocols. The gateway forwards normalized data securely to the QualMeters cloud while also supporting local diagnostics and store-and-forward resilience.</p>
 <h3>Use this model when:</h3>
@@ -26,11 +36,11 @@
 <section class="section section-muted"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">Platform overview</p><h2>Model B : Direct NB-IoT deployment</h2></div><div class="section-copy"><p>With NB-IoT meters, each meter can send readings directly to the QualMeters cloud over a cellular low-power wide-area network. This can reduce the need for building-level infrastructure and is useful when direct coverage is available and the meter estate is geographically distributed.</p>
 <h3>Use this model when:</h3>
 <ul class="check-list"><li>Meters have integrated NB-IoT communication</li><li>Buildings are distributed across a wide area</li><li>A gateway installation is unnecessary or impractical</li><li>The project benefits from cellular coverage and direct device onboarding</li></ul></div></div></section>
-<section class="section"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">Platform overview</p><h2>A common data model for every reading</h2></div><div class="section-copy"><p>Regardless of how the reading arrives, the platform should store data in a common structure: meter identity, apartment or property association, timestamp, volume, temperature class, communication source, reading quality, alarm state and device health. This keeps dashboards, APIs and resident portals independent from the communication technology used in the field.</p></div></div></section>
+<section class="section"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">Platform overview</p><h2>A common data model for every reading</h2></div><div class="section-copy"><p>Regardless of how the reading arrives, the platform stores data in a common structure: meter identity, apartment or property association, timestamp, volume, temperature class, communication source, reading quality, alarm state and device health. This keeps dashboards, APIs and resident portals independent from the communication technology used in the field.</p></div></div></section>
 <section class="section section-muted"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">Platform overview</p><h2>Platform capabilities</h2></div><div class="section-copy"><p><strong>Meter data management:</strong> Device registry, meter lifecycle, readings, alarms, metadata and audit trail.</p>
 <p><strong>Resident experience:</strong> QR-based access, current-reading verification, consumption graphs, alerts and comparison features.</p>
 <p><strong>Organization tools:</strong> Property dashboards, fleet health, leak indicators, exports, API access and alert management.</p>
-<p><strong>Integration layer:</strong> REST API, webhook-ready event model, billing exports and future protocol adapters.</p>
+<p><strong>Integration layer:</strong> REST API, webhook-ready event model, billing exports and additional protocol adapters.</p>
 <p><strong>Security foundation:</strong> Tenant separation, role-based access, encrypted data transport and structured audit logging.</p></div></div></section>
 <section class="section"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">Platform overview</p><h2>Next step</h2></div><div class="section-copy"><div class="inline-cta"><h3>Need to choose between gateway and NB-IoT?</h3><p>QualMeters can map your building types, meter locations, protocol requirements and data needs into a recommended architecture.</p><a class="button button-secondary" href="../company/">Request architecture consultation</a></div></div></div></section>
   </main>

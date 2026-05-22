@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Water Meter REST API | QualMeters Oy</title>
   <meta name="description" content="QualMeters provides REST API access to water meter readings, alerts, meter metadata and device health for cities, municipalities and housing companies.">
+  <link rel="canonical" href="https://qualmeters.com/rest-api/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Water Meter REST API | QualMeters Oy">
+  <meta property="og:description" content="QualMeters provides REST API access to water meter readings, alerts, meter metadata and device health for cities, municipalities and housing companies.">
+  <meta property="og:url" content="https://qualmeters.com/rest-api/">
+  <meta property="og:image" content="https://qualmeters.com/assets/utility-dashboard-api.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Water Meter REST API | QualMeters Oy">
+  <meta name="twitter:description" content="QualMeters provides REST API access to water meter readings, alerts, meter metadata and device health for cities, municipalities and housing companies.">
+  <meta name="twitter:image" content="https://qualmeters.com/assets/utility-dashboard-api.svg">
   <link rel="icon" href="../assets/qualmeters-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=mobile-nav-4754003">
 </head>
@@ -18,14 +28,14 @@
         <p class="hero-body">Cities, municipalities, housing companies and portfolio owners can retrieve water meter data directly from QualMeters. The API is designed to support billing workflows, operational dashboards, municipal systems, property platforms and analytics.</p>
         <div class="hero-actions"><a class="button button-primary" href="../company/">Request API documentation</a><a class="button button-secondary" href="../company/">Discuss integration scope</a></div>
       </div>
-      <div class="hero-visual"><img src="../assets/utility-dashboard-api.svg" alt="REST API illustration"></div>
+      <div class="hero-visual"><img src="../assets/utility-dashboard-api.svg" alt="Utility dashboard and API integration view for meter readings, alerts and device health"></div>
     </section>
     <section class="section"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">REST API</p><h2>API use cases</h2></div><div class="section-copy"><p><strong>Billing and cost allocation:</strong> Retrieve readings by property, apartment, meter and time period.</p>
 <p><strong>Municipal water insight:</strong> Access consumption data for planning, reporting and demand analysis.</p>
 <p><strong>Property dashboards:</strong> Integrate water consumption and alert states into existing property management systems.</p>
 <p><strong>Leak workflows:</strong> Pull alerts into maintenance ticketing tools or notification systems.</p>
 <p><strong>Data exports:</strong> Support CSV, Excel and scheduled exports for teams that are not ready for full API integration.</p></div></div></section>
-<section class="section section-muted"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">REST API</p><h2>Recommended endpoint model</h2></div><div class="section-copy"><p>The public API should be versioned and tenant-scoped.</p>
+<section class="section section-muted"><div class="section-inner split-section"><div class="section-heading"><p class="eyebrow">REST API</p><h2>Endpoint model</h2></div><div class="section-copy"><p>The public API is versioned and tenant-scoped.</p>
 <pre class="mini-card"><code data-language="text">GET /v1/meters
 GET /v1/meters/{meterId}
 GET /v1/meters/{meterId}/readings
